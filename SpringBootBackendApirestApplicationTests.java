@@ -77,10 +77,10 @@ public class SpringBootBackendApirestApplicationTests {
         ResponseEntity<List<Cliente>> response = clienteRestController.index();
 
         // Verificar resultados
-//        assertEquals(HttpStatus.OK, response.getStatusCode());
-//        assertNotNull(response.getBody());
-//        assertEquals(1, response.getBody().size());
-//        assertEquals("John8", response.getBody().get(0).getNombre());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertEquals(1, response.getBody().size());
+        assertEquals("John8", response.getBody().get(0).getNombre());
 
         // Verificar que se llamó al servicio
         verify(clienteService, times(1)).findAll();
